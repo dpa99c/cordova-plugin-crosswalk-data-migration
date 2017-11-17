@@ -37,11 +37,11 @@ public class Migration extends CordovaPlugin {
 
     // Storage directory names used by Android 4.4+ and XWalk
     private static String[] modernAndroidStorage = {
-        "Cache",
-        "Cookies",
-        "Cookies-journal",
-        "IndexedDB",
-        "databases"
+            "Cache",
+            "Cookies",
+            "Cookies-journal",
+            "IndexedDB",
+            "databases"
     };
 
     private Activity activity;
@@ -119,6 +119,7 @@ public class Migration extends CordovaPlugin {
         }
 
         if(hasMigratedData){
+            deleteRecursive(XWalkRoot);
             restartCordova();
         }
     }
@@ -191,5 +192,13 @@ public class Migration extends CordovaPlugin {
         String filesPath = filesDir.getAbsolutePath();
         filesPath = filesPath.replaceAll("/files", "");
         return new File(filesPath);
+    }
+
+    private void deleteRecursive(File fileOrDirectory) {
+        if (fileOrDirectory.isDirectory())
+            for (File child : fileOrDirectory.listFiles())
+                deleteRecursive(child);
+
+        fileOrDirectory.delete();
     }
 }
