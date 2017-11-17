@@ -40,7 +40,8 @@ public class Migration extends CordovaPlugin {
         "Cache",
         "Cookies",
         "Cookies-journal",
-        "IndexedDB"
+        "IndexedDB",
+        "databases"
     };
 
     private Activity activity;
@@ -53,6 +54,7 @@ public class Migration extends CordovaPlugin {
 
     public Migration() {}
 
+    @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         Log.d(TAG, "initialize()");
 
