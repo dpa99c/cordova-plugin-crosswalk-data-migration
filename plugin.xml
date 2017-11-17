@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-crosswalk-data-migration"
+    version="1.0.0">
+
+    <name>Crosswalk Data Migration</name>
+    <description>Cordova/Phonegap plugin</description>
+    <author>Dave Alden</author>
+    <license>MIT</license>
+    <keywords></keywords>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <repo>https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration.git</repo>
+    <issue>https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration/issues</issue>
+
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Migration" >
+                <param name="android-package" value="cordova.plugins.crosswalk.Migration"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/Migration.java" target-dir="src/cordova/plugins/crosswalk" />
+    </platform>
+</plugin>
