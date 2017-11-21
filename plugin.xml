@@ -4,11 +4,11 @@
     id="cordova-plugin-crosswalk-data-migration"
     version="1.0.0">
 
-    <name>Crosswalk Data Migration</name>
-    <description>Cordova/Phonegap plugin</description>
+    <name>Crosswalk Data Migration Plugin</name>
+    <description>Cordova/Phonegap plugin for Android to preserve persistent webview data after removing Crosswalk from your Cordova/Phonegap-based app.</description>
     <author>Dave Alden</author>
     <license>MIT</license>
-    <keywords></keywords>
+    <keywords>cordova,phonegap,android,crosswalk</keywords>
     <engines>
         <engine name="cordova" version=">=3.0.0" />
     </engines>
