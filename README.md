@@ -105,19 +105,25 @@ Assuming you have an existing Cordova Android app which uses Crosswalk, you need
 
 The plugin will migrate the following data from Crosswalk back to the system webview, dependent on the Android version: 
 
-- Android 4.4 and above
+- Android 5.0 and above
     - Local Storage
     - Cookies
     - IndexedDB
     - WebSQL
     - Cache
-- Android 4.3 and below
+- Android 4.4 and below
     - Local Storage
 
 # Implementation notes and caveats
 
-- On Android 4.3 and below only local storage is migrated. 
-    - This is because Android 4.3 and below do not use a Chrome-powered Webview, so the storage format is entirely different to the Chrome-powered Crosswalk webview, so the data is backwardly compatible.
+- On Android 4.4 and below only local storage is migrated. 
+    - Android 4.3 and below do not use a Chromium-based webview.
+        - The file storage layout is entirely different to the Chromium-based Crosswalk webview.
+        - So the DB data is backwardly in-compatible.
+    - While Android 4.4 has a Chromium-based webview, meaning the file storage layout is the same as Crosswalk webview.
+        - However, while it's the case that Crosswalk's (more modern) webview is able to import IndexedDB/WebSQL data from the older Android 4.4 system webview
+        - The opposite is not the case: Android 4.4 system webview is not able to read the IndexedDB/WebSQL data from the more modern Crosswalk webview.
+        - Because Android 5+ webview is self-updating, it is relatively as modern (or more modern) than the Crosswalk webview, so IndexedDB/WebSQL data can be read successfully.
 - Due to [Chromium dropping support for `file://` cookies](https://codereview.chromium.org/976553002/#ps80001), although the Cookie data is copied from Crosswalk to the system webview, it will probably be empty.
     - A [pull request](https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview/pull/98) was made to re-enable `file://`-based cookies in the Crosswalk Cordova plugin, but it was never merged. 
 - The migration mechanism is based on inverting the operations performed by Crosswalk to migrate data from the system webview to Crosswalk.
@@ -189,7 +195,7 @@ To run the migration test, do the following:
     - [ARMv7](https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part1/build/crosswalk-data-migration-test-part-1-armv7.apk)
     - [x86](https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part1/build/crosswalk-data-migration-test-part-1-x86.apk)
 - In the app:
-    - Observe "Webview" is "Crosswalk"
+    - Observe "webview" is "Crosswalk"
     - Press "Generate data" to generate some random data.
     - Press "Save to storage" to save it use the various local storage technologies.
     - Press "Reload page" or restart the app to convince yourself the data is saved.
@@ -203,7 +209,7 @@ To run the migration test, do the following:
        - `cordova run android`
 - Or install the pre-built APK: [ARMv7/x86](https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part2/build/crosswalk-data-migration-test-part-2.apk)
 - In the app:
-    - Observe "Webview" is "System"
+    - Observe "webview" is "System"
     - Observe the previous values from the Crosswalk view have been loaded back into the inputs.        
 
 # License
