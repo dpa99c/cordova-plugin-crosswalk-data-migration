@@ -45,7 +45,7 @@ This means devices running these modern Android versions don't need Crosswalk to
 
 In fact running Crosswalk on modern Android 5.0+ devices is actually unfavourable for the following reasons:
 
-- The Crosswalk project [was deprecated])(https://crosswalk-project.org/blog/crosswalk-final-release.html) in February 2017.
+- The Crosswalk project [was deprecated](https://crosswalk-project.org/blog/crosswalk-final-release.html) in February 2017.
     - This means it is no longer being actively maintained or updated, so any bugs which are present in the final (v23) release will remain and no new features will be added.
         - By contrast, the modern system webviews continues to be updated with new features and bug fixes, so in the same way that Crosswalk is more modern than old Android 4 webviews, it is actually less modern than Android 5+ webviews.
     - `cordova-plugin-crosswalk-webview` is [incompatible with the latest release of `cordova-android@6.4.0`](https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview/issues/183)
