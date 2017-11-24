@@ -178,27 +178,33 @@ I've created an example app to demonstrate/validate this migration plugin.
 - While the second is configured to use this plugin and have a higher version code, such that it can be installed as an update over the first.
 
 To run the migration test, do the following:
-- Clone the first part: [cordova-plugin-crosswalk-data-migration-test-part1](https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part1)
-    - `git clone https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part1 && cd cordova-plugin-crosswalk-data-migration-test-part1`
-- Add the Android platform
-    - `cordova platform add android`
-- Connect a device/emulator and run the app
-    - `cordova run android`
+- Build & run the first part of the app:
+    - Clone it: [cordova-plugin-crosswalk-data-migration-test-part1](https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part1)
+        - `git clone https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part1 && cd cordova-plugin-crosswalk-data-migration-test-part1`
+    - Add the Android platform
+        - `cordova platform add android`
+    - Connect a device/emulator and run the app
+        - `cordova run android`
+- Or install the pre-built APK:
+    - [ARMv7](https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part1/build/crosswalk-data-migration-test-part-1-armv7.apk)
+    - [x86](https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part1/build/crosswalk-data-migration-test-part-1-x86.apk)
 - In the app:
     - Observe "Webview" is "Crosswalk"
     - Press "Generate data" to generate some random data.
     - Press "Save to storage" to save it use the various local storage technologies.
     - Press "Reload page" or restart the app to convince yourself the data is saved.
         - Note: Cookies will not be persisted due to the Crosswalk no longer supporting `file://` cookies.
-- Clone the second part: [cordova-plugin-crosswalk-data-migration-test-part2](https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part2)
-    - `git clone https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part2 && cd cordova-plugin-crosswalk-data-migration-test-part2` 
-- Add the Android platform
-   - `cordova platform add android`
-- Run the app
-   - `cordova run android`
+- Build & run the second part of the app:        
+    - Clone it : [cordova-plugin-crosswalk-data-migration-test-part2](https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part2)
+        - `git clone https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part2 && cd cordova-plugin-crosswalk-data-migration-test-part2` 
+    - Add the Android platform
+       - `cordova platform add android`
+    - Run the app
+       - `cordova run android`
+- Or install the pre-built APK: [ARMv7/x86](https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration-test-part2/build/crosswalk-data-migration-test-part-2.apk)
 - In the app:
     - Observe "Webview" is "System"
-    - Observe the previous values from the Crosswalk view have been loaded back into the inputs.
+    - Observe the previous values from the Crosswalk view have been loaded back into the inputs.        
 
 # License
 ================
