@@ -18,7 +18,7 @@
 
     <!-- android -->
     <platform name="android">
-        <config-file target="config.xml" parent="/*">
+        <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Migration" >
                 <param name="android-package" value="cordova.plugins.crosswalk.Migration"/>
                 <param name="onload" value="true" />
