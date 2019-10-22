@@ -1,17 +1,17 @@
 {
     "version": "1.0.0",
-    "name": "cordova-plugin-crosswalk-data-migration",
+    "name": "cordova-plugin-crosswalk-data-migration-indexeddb",
     "cordova_name": "Crosswalk Data Migration Plugin",
     "description": "Cordova/Phonegap plugin for Android to preserve persistent webview data after removing Crosswalk from your app.",
     "author": "Dave Alden",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration.git"
+        "url": "https://github.com/maikell84/cordova-plugin-crosswalk-data-migration.git"
     },
-    "issue": "https://github.com/dpa99c/cordova-plugin-crosswalk-data-migration/issues",
+    "issue": "https://github.com/maikell84/cordova-plugin-crosswalk-data-migration/issues",
     "cordova": {
-        "id": "cordova-plugin-crosswalk-data-migration",
+        "id": "cordova-plugin-crosswalk-data-migration-indexeddb",
         "platforms": [
             "android"
         ]
